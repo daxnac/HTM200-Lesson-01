@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>My Portfolio Site</title>
+    <meta name="description" content="A website that tells a little about myself.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Latest compiled and minified Jquery -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <style>
+      footer {
+        text-align: center;
+        padding: 20px;
+        background-color: grey;
+      }
+    </style>
+</head>
+<body>
+  <nav class="navbar navbar-inverse" data-spy="affix" data-offset-top="197">
+    <div  class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">MY<strong>PORTFOLIO</strong>SITE</a>
+      </div>
+      <div class="collapse navbar-collapse" id="navbar-collapse">
+        <ul class="nav navbar-nav">
+          <li><a href="#home">Home</a></li>
+        </ul>   
+      </div> 
+    </div>    
+  </nav>
+  <div class="container">
+    <div class="col-md-12">
+      <h2>Responsive Web Design</h2>
+        <p>The creation of responsive web design has changed the world wide web. It is the best solution for multi-device/screen web development, very light, fluid and development is easy with fewer uncomplicated code. It has solved all the head aches I have encountered in all my years as a web developer.
+        <p>In the past we always had to assume or research how our audiences would view our web sites. We had to rely on custom HTML and CSS that can do responsiveness. Including other tools or WYSIWYG apps like Dreamweaver, which really aren’t the best at it.</p>
+        <p>After a lot of research and taking classes, responsive web design is a lot simpler than I thought. Development has never been easier, all the resources and tools are out there on the web to help you get started. Better tools and better ways with writing code. Including frameworks such as boostrap or jquery.</p>
+        <p>With a properly designed responsive web site, all you need is one, and just that one for multiple devices and screens.</p>
+        <p><button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">Click here to request more info...</button></p>
+      <!-- Modal Window -->
+      <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title" id="myModalLabel">Request Form</h4>
+              <p>To request for more information, please complete the following form.</p>
+            </div>
+            <div class="modal-body">
+              <form method="get">
+              <label>First Name: 
+                <input type="text" name="fname">
+              </label>
+              <label>Last Name: 
+                <input type="text" name="lname">
+              </label>
+              <br>
+                <label>Q</label>
+              <br>  
+              <label>Question / Comments: 
+                <br>
+                <textarea name="question" rows="10" cols="30"></textarea>
+              </label> 
+              <br>   
+              <input type="submit" value="Submit">  
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>    
+  </div>
+  <footer class="footer">
+     <address class="container">
+       <p>&copy; Dax Nacu || <a href="mailto:daxnac@outlook.com"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>&nbsp;daxnac@outlook.com</a></p>
+     </address>
+  </footer>
+  </body>
+</html>
