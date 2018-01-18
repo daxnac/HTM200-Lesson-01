@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="utf-8">
     <title>My Portfolio Site</title>
     <meta name="description" content="A website that tells a little about myself.">
@@ -17,75 +17,143 @@
         padding: 20px;
         background-color: grey;
       }
+      #other {
+        display: none;
+      }
     </style>
-</head>
-<body>
-  <nav class="navbar navbar-inverse" data-spy="affix" data-offset-top="197">
-    <div  class="container-fluid">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="#">MY<strong>PORTFOLIO</strong>SITE</a>
-      </div>
-      <div class="collapse navbar-collapse" id="navbar-collapse">
-        <ul class="nav navbar-nav">
-          <li><a href="#home">Home</a></li>
-        </ul>   
-      </div> 
-    </div>    
-  </nav>
-  <div class="container">
-    <div class="col-md-12">
-      <h2>Responsive Web Design</h2>
+    <script>
+      // Select input, show text input on value of 'Other'
+      function showOther() {
+        if (document.getElementById('topic').value == 'other') {
+            document.getElementById('other').style.display = 'block';
+        } else {
+            document.getElementById('other').style.display = 'none';
+          }
+        }
+    </script>
+  </head>
+  <body>
+    <nav class="navbar navbar-inverse" data-spy="affix" data-offset-top="197">
+      <div  class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">MY<strong>PORTFOLIO</strong>SITE</a>
+        </div>
+        <div class="collapse navbar-collapse" id="navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="#home">Home</a></li>
+          </ul>   
+        </div> 
+      </div>    
+    </nav>
+    <div class="container">
+      <div class="col-md-12">
+        <h2>Responsive Web Design</h2>
         <p>The creation of responsive web design has changed the world wide web. It is the best solution for multi-device/screen web development, very light, fluid and development is easy with fewer uncomplicated code. It has solved all the head aches I have encountered in all my years as a web developer.
         <p>In the past we always had to assume or research how our audiences would view our web sites. We had to rely on custom HTML and CSS that can do responsiveness. Including other tools or WYSIWYG apps like Dreamweaver, which really aren’t the best at it.</p>
         <p>After a lot of research and taking classes, responsive web design is a lot simpler than I thought. Development has never been easier, all the resources and tools are out there on the web to help you get started. Better tools and better ways with writing code. Including frameworks such as boostrap or jquery.</p>
         <p>With a properly designed responsive web site, all you need is one, and just that one for multiple devices and screens.</p>
-        <p><button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">Click here to request more info...</button></p>
-      <!-- Modal Window -->
-      <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title" id="myModalLabel">Request Form</h4>
-              <p>To request for more information, please complete the following form.</p>
-            </div>
-            <div class="modal-body">
-              <form method="get">
-              <label>First Name: 
-                <input type="text" name="fname">
-              </label>
-              <label>Last Name: 
-                <input type="text" name="lname">
-              </label>
-              <br>
-                <label>Q</label>
-              <br>  
-              <label>Question / Comments: 
-                <br>
-                <textarea name="question" rows="10" cols="30"></textarea>
-              </label> 
-              <br>   
-              <input type="submit" value="Submit">  
-              </form>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <p><button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">Request more information</button></p>
+        <!-- Modal Window -->
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h3 class="modal-title" id="myModalLabel">Request Form</h3>
+                <p>To request for more information, please complete the following form.</p>
+              </div>
+              <div class="modal-body">
+                <form name="request-form" method="get">
+                  <fieldset>
+                    <legend>User Information</legend>
+                    <label>First Name*: 
+                      <input type="text" name="fname" class="form-control" required />
+                    </label>
+                    <label>Last Name*: 
+                      <input type="text" name="lname" class="form-control" required />
+                    </label>
+                    <label>Email*: 
+                      <input type="email" name="email" class="form-control" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required placeholder="ex. john.doe@gmail.com" />
+                    </label>
+                    <label>Phone: 
+                      <input type="tel" name="phone" class="form-control" title="ex. 123-456-7890" placeholder="ex. 123-456-7890" />
+                    </label>
+                  </fieldset>
+                  <br>
+                  <fieldset>
+                    <legend>Request Information</legend>
+                    <div class="form-check">
+                      What is the purpose of your website?
+                      <br>
+                      <label class="form-check form-check-label">
+                        <input type="checkbox" name="site1" value="social" class="form-check-input"> Social
+                      </label>
+                      <label class="form-check form-check-label"> 
+                        <input type="checkbox" name="site2" value="news" class="form-check-input"> News
+                      </label>
+                      <label class="form-check form-check-label">
+                        <input type="checkbox" name="site3" value="ecommerce" class="form-check-input"> eCommerce 
+                      </label>
+                      <label class="form-check form-check-label">
+                        <input type="checkbox" name="site4" value="education" class="form-check-input"> Education 
+                      </label>
+                      <label class="form-check form-check-label"> 
+                        <input type="checkbox" name="site5" value="products" class="form-check-input"> Products
+                      </label>
+                      <label class="form-check form-check-label">
+                        <input type="checkbox" name="site6" value="services" class="form-check-input"> Services
+                      </label>
+                    </div>
+                    <br>
+                    <div class="form-check">
+                      Was this information helpful?
+                      <br>
+                      <label class="form-check-label">Yes <input type="radio" value="yes" class="form-check-input"></label>
+                      <label class="form-check-label">No <input type="radio" value="no" class="form-check-input"></label>
+                    </div>
+                    <br>
+                    <label>Other Topic Interest: 
+                      <select id="topic" name="topic" class="form-control" onclick="showOther();">
+                        <option value="">Please select</option>
+                        <option value="rwd">Responsive Web Design</option>
+                        <option value="html5">HTML5</option>
+                        <option value="css">CSS</option>
+                        <option value="javascript">JavaScript</option>
+                        <option value="programming">Programming</option>
+                        <option value="other">Other</option>
+                      </select>
+                    </label>
+                    <br>
+                    <label id="other">Enter other topics: 
+                      <input type="text" name="other" class="form-control">
+                    </label>
+                    <br>  
+                    <label>Questions / Comments: 
+                      <textarea name="question" rows="10" cols="50" class="form-control" placeholder="Enter your questions or comments."></textarea>
+                    </label> 
+                  </fieldset>
+                  <p class="alert alert-danger">* = Indicate required fields.</p>
+                  <input type="submit" value="Submit Form" class="btn btn-primary">
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </div>    
-  </div>
-  <footer class="footer">
-     <address class="container">
-       <p>&copy; Dax Nacu || <a href="mailto:daxnac@outlook.com"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>&nbsp;daxnac@outlook.com</a></p>
-     </address>
-  </footer>
+      </div>    
+    </div>
+    <footer class="footer">
+       <address class="container">
+         <p>&copy; Dax Nacu || <a href="mailto:daxnac@outlook.com"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>&nbsp;daxnac@outlook.com</a></p>
+       </address>
+    </footer>
   </body>
 </html>
